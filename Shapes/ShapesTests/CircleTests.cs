@@ -13,7 +13,7 @@ namespace ShapesTests
         {
             var circle = new Circle(radius);
 
-            Assert.That(area, Is.EqualTo(circle.CalculateArea()).Within(Numbers.Epsilon));
+            Assert.That(circle.CalculateArea(), Is.EqualTo(area).Within(Numbers.Epsilon));
         }
 
         [TestCase(-1.0)]

@@ -14,7 +14,7 @@ namespace ShapesTests
         {
             var triangle = new Triangle(sideA, sideB, sideC);
 
-            Assert.That(area, Is.EqualTo(triangle.CalculateArea()).Within(Numbers.Epsilon));
+            Assert.That(triangle.CalculateArea(), Is.EqualTo(area).Within(Numbers.Epsilon));
         }
 
         [TestCase(-1.0, 1.0, 1.0)]
