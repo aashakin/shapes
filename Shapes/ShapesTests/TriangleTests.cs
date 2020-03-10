@@ -40,6 +40,8 @@ namespace ShapesTests
         }
         
         [TestCase(3.0, 4.0, 5.0)]
+        [TestCase(3.0, 5.0, 4.0)]
+        [TestCase(5.0, 4.0, 3.0)]
         public void ShouldReturnTrueIfTriangleIsRightTriangle(double sideA, double sideB, double sideC)
         {
             var triangle =  new Triangle(sideA, sideB, sideC);
