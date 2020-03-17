@@ -9,20 +9,18 @@ namespace ShapesTests
     {
         [TestCase(1.0, Math.PI)]
         [TestCase(2.0, 4.0 * Math.PI)]
-        public void ShouldCalculateAreaIfRadiusIsGreaterThanZero(double radius, double area)
+        public void CalculateArea_RadiusIsGreaterThanZero_ReturnArea(double radius, double expectedValue)
         {
             var circle = new Circle(radius);
 
-            Assert.That(circle.CalculateArea(), Is.EqualTo(area).Within(Numbers.Epsilon));
+            Assert.That(circle.CalculateArea(), Is.EqualTo(expectedValue).Within(Numbers.Epsilon));
         }
 
         [TestCase(-1.0)]
         [TestCase(0.0)]
-        public void ShouldThrowExceptionIfRadiusIsLessThanOrEqualToZero(double radius)
+        public void CreateCircle_RadiusIsLessThanOrEqualToZero_ThrowException(double radius)
         {
-            var ex = Assert.Throws<ArgumentException>(() => new Circle(radius));
-
-            Assert.IsNotNull(ex);
+            Assert.That(() => new Circle(radius), Throws.ArgumentException);
         }
     }
 }
